@@ -22,5 +22,7 @@ RUN conda install -y --quiet \
 	magma-cuda91 \
 	cuda91 \
 	'pytorch=1.0.0'
+ && pip install matplotlib
+ WORKDIR /
 
 
