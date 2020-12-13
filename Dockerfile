@@ -132,7 +132,6 @@
 	
 FROM okwrtdsh/anaconda3:tf-9.0-cudnn7-201807
 
-RUN pip install zip
  
 
 
