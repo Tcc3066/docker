@@ -132,11 +132,12 @@
 	
 	
 	
-# FROM okwrtdsh/anaconda3:tf-9.0-cudnn7-201807
+FROM okwrtdsh/anaconda3:tf-9.0-cudnn7-201807
 
 
 
-FROM continuumio/miniconda3
+# FROM continuumio/miniconda3
+
 
 WORKDIR /
 
