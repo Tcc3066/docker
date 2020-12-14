@@ -130,7 +130,25 @@
 # 	--no-browser \
 # 	--allow-root
 	
-FROM okwrtdsh/anaconda3:tf-9.0-cudnn7-201807
+	
+	
+# FROM okwrtdsh/anaconda3:tf-9.0-cudnn7-201807
+
+
+
+FROM continuumio/miniconda3
+
+WORKDIR /
+
+RUN git clone https://github.com/Guanghan/lighttrack.git
+
+WORKDIR /lighttrack
+
+RUN conda env create -f environment.yml
+
+RUN ln -s /opt/conda/envs/lighttrack/bin/python /usr/bin/python
+
+
 
  
 
