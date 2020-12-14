@@ -147,7 +147,7 @@ WORKDIR /
 
 COPY environment.yml .
 
-RUN ln -s /opt/conda/envs/lighttrack/bin/python /usr/bin/python
+#RUN ln -s /opt/conda/envs/lighttrack/bin/python /usr/bin/python
 
 RUN conda env create -f environment.yml
 
