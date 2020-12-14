@@ -140,9 +140,11 @@ FROM continuumio/miniconda3
 
 WORKDIR /
 
-RUN git clone https://github.com/Guanghan/lighttrack.git
+#RUN git clone https://github.com/Guanghan/lighttrack.git
 
-WORKDIR /lighttrack
+#WORKDIR /lighttrack
+
+COPY environment.yml .
 
 RUN conda env create -f environment.yml
 
