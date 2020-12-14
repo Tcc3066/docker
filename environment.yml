@@ -126,5 +126,4 @@ dependencies:
     - tqdm==4.23.4
     - zope.interface==4.5.0
     - numpy==1.14.3
-    - jpeg==9b
 prefix: /root/anaconda2/envs/py36
