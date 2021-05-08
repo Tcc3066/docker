@@ -132,26 +132,42 @@
 	
 	
 	
-FROM okwrtdsh/anaconda3:tf-9.0-cudnn7-201807
+# FROM okwrtdsh/anaconda3:tf-9.0-cudnn7-201807
 
 
 
-# FROM continuumio/miniconda3
+# # FROM continuumio/miniconda3
 
+
+# WORKDIR /
+
+# #RUN git clone https://github.com/Guanghan/lighttrack.git
+
+# #WORKDIR /lighttrack
+
+# COPY environment.yml .
+
+# #RUN ln -s /opt/conda/envs/lighttrack/bin/python /usr/bin/python
+
+# RUN conda env create -f environment.yml
+
+FROM 993352270/dockertest:v1.0.6
 
 WORKDIR /
 
-#RUN git clone https://github.com/Guanghan/lighttrack.git
+RUN git clone https://github.com/open-mmlab/mmskeleton.git
 
-#WORKDIR /lighttrack
+WORKDIR mmskeleton
 
-COPY environment.yml .
+RUN python setup.py develop
 
-#RUN ln -s /opt/conda/envs/lighttrack/bin/python /usr/bin/python
+WORKDIR mmskeleton/ops/nms/
 
-RUN conda env create -f environment.yml
+RUN python setup_linux.py develop
 
+RUN cd ../../../
 
+RUN python setup.py develop --mmdet
 
 
 
