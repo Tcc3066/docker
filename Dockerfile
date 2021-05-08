@@ -159,6 +159,8 @@ RUN git clone https://github.com/open-mmlab/mmskeleton.git
 
 WORKDIR mmskeleton
 
+RUN pip install Cython
+
 RUN python setup.py develop
 
 WORKDIR mmskeleton/ops/nms/
