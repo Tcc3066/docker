@@ -157,9 +157,9 @@ WORKDIR /
 
 RUN git clone https://github.com/open-mmlab/mmskeleton.git && pip install Cython && pip install pycocotools
 
-WORKDIR mmskeleton/ops/nms/
+WORKDIR mmskeleton/mmskeleton/ops/nms/
 
-RUN python setup_linux.py develop && cd ../../../
+RUN python setup_linux.py develop 
 
 WORKDIR mmskeleton
 
