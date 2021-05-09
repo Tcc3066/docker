@@ -159,9 +159,7 @@ RUN git clone https://github.com/open-mmlab/mmskeleton.git && pip install Cython
 
 WORKDIR mmskeleton/mmskeleton/ops/nms/
 
-RUN python setup_linux.py develop 
-
-WORKDIR mmskeleton
+RUN python setup_linux.py develop && cd ../../../
 
 RUN python setup.py develop && pip uninstall mmcv && pip install mmcv==0.4.3
 
