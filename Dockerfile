@@ -155,19 +155,15 @@ FROM 993352270/dockertest:v1.0.6
 
 WORKDIR /
 
-RUN git clone https://github.com/open-mmlab/mmskeleton.git
-
-WORKDIR mmskeleton
-
-RUN pip install Cython
-
-RUN python setup.py develop
+RUN git clone https://github.com/open-mmlab/mmskeleton.git && pip install Cython && pip install pycocotools
 
 WORKDIR mmskeleton/ops/nms/
 
-RUN python setup_linux.py develop
+RUN python setup_linux.py develop && cd ../../../
 
-RUN cd ../../../
+WORKDIR mmskeleton
+
+RUN python setup.py develop && pip uninstall mmcv && pip install mmcv==0.4.3
 
 RUN python setup.py develop --mmdet
 
